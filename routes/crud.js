@@ -1,7 +1,9 @@
 const {Router} = require('express');
 const router = Router();
-const {getAllproducts,updateProduct,deliteProduct}=require('../controllers/crud')
+const {getAllproducts,insertProduct, updateProduct,deliteProduct,getbyID}=require('../controllers/crud')
 router.get('/',getAllproducts)
-router.post('/',updateProduct)
-router.delete('/',deliteProduct)
-module.exports = router
+router.get('/:id',getbyID)
+router.post('/',insertProduct)
+router.put('/:id',updateProduct)
+router.delete('/:id',deliteProduct)
+module.exports = router 
